@@ -10,6 +10,7 @@ module RailsStarterTemplate
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.autoload_paths << "#{config.root}/lib"
     config.generators.assets = false
     config.generators.helper = false
 
