@@ -13,7 +13,8 @@ module HockeyReference
 
         schedule.push({
           'game_id': row.css('th').first['csk'],
-          'date_game': row.css('th').first.text,
+          'season': season,
+          'game_date': row.css('th').first.text,
           'visitor_team_name': table_data[0].text,
           'visitor_team_abrv': table_data[0].children.first['href'].split('/')[2],
           'home_team_name': table_data[2].text,
