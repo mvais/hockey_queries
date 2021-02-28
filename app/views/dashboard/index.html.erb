@@ -1,0 +1,29 @@
+<div class="container max-w-7xl	mt-5 m-auto">
+    <h1 class="font-bold text-4xl">Standings</h1>
+    <div class="py-4 flex">
+        <table class="w-full text-md bg-white mb-4">
+            <thead>
+                <tr class="bg-doge-grey shadow-none">
+                    <th class="text-left p-3 px-5">Team</th>
+                    <th class="text-left p-3 px-5">GP</th>
+                    <th class="text-left p-3 px-5">Wins</th>
+                    <th class="text-left p-3 px-5">Losses</th>
+                    <th class="text-left p-3 px-5">OTL</th>
+                    <th class="text-left p-3 px-5">Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @standings.each do |standing| %>
+                    <tr class="border-b-2 border-bg-dodge-grey">
+                        <td class="p-3 px-5 font-semibold border-r-2 border-bg-dodge-grey"><%= standing["team_name"] %></td>
+                        <td class="p-3 px-5"><%= standing["games_played"] %></td>
+                        <td class="p-3 px-5"><%= standing["total_wins"] %></td>
+                        <td class="p-3 px-5"><%= standing["regulation_losses"] %></td>
+                        <td class="p-3 px-5"><%= standing["overtime_losses"] %></td>
+                        <td class="p-3 px-5">N/A</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
