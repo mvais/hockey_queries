@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   def index
     sql = %Q(
         WITH VISITOR_TEAM_STATS AS (
@@ -46,9 +48,19 @@ class DashboardController < ApplicationController
         (vts.shootout_losses + hts.shootout_losses) shootout_losses
       FROM VISITOR_TEAM_STATS vts
       INNER JOIN HOME_TEAM_STATS hts ON vts.abrv = hts.abrv
-      ORDER BY CAST(vts.total_wins + hts.total_wins AS INT) DESC;
+      ORDER BY #{sort_column} #{sort_direction};
     )
 
     @standings = ActiveRecord::Base.connection.execute(sql).to_a
+  end
+
+  private
+
+  def sort_column
+    params[:sort] || 4
+  end
+
+  def sort_direction
+    params[:direction] || 'desc'
   end
 end

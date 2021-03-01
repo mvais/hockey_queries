@@ -4,12 +4,11 @@
         <table class="w-full text-md bg-white mb-4">
             <thead>
                 <tr class="bg-doge-grey shadow-none">
-                    <th class="text-left p-3 px-5">Team</th>
-                    <th class="text-left p-3 px-5">GP</th>
-                    <th class="text-left p-3 px-5">Wins</th>
-                    <th class="text-left p-3 px-5">Losses</th>
-                    <th class="text-left p-3 px-5">OTL</th>
-                    <th class="text-left p-3 px-5">Points</th>
+                    <th class="text-left p-3 px-5"><%= sortable "Team", 1 %></th>
+                    <th class="text-left p-3 px-5"><%= sortable "GP", 3 %></th>
+                    <th class="text-left p-3 px-5"><%= sortable "Wins", 4 %></th>
+                    <th class="text-left p-3 px-5"><%= sortable "Losses", 9 %></th>
+                    <th class="text-left p-3 px-5"><%= sortable "OTL", 10 %></th>
                 </tr>
             </thead>
             <tbody>
@@ -20,7 +19,6 @@
                         <td class="p-3 px-5"><%= standing["total_wins"] %></td>
                         <td class="p-3 px-5"><%= standing["regulation_losses"] %></td>
                         <td class="p-3 px-5"><%= standing["overtime_losses"] %></td>
-                        <td class="p-3 px-5">N/A</td>
                     </tr>
                 <% end %>
             </tbody>
