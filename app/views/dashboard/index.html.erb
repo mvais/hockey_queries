@@ -6,9 +6,13 @@
                     <th class="text-left p-3 px-5"><%= sortable "Team", 1 %></th>
                     <th class="p-3 px-5"><%= sortable "GP", 3 %></th>
                     <th class="p-3 px-5"><%= sortable "W", 4 %></th>
-                    <th class="p-3 px-5"><%= sortable "L", 9 %></th>
-                    <th class="p-3 px-5"><%= sortable "OTL", 10 %></th>
-                    <th class="p-3 px-5"><%= sortable "P", 12 %></th>
+                    <th class="p-3 px-5"><%= sortable "L", 10 %></th>
+                    <th class="p-3 px-5"><%= sortable "OTL", 11 %></th>
+                    <th class="p-3 px-5"><%= sortable "P", 13 %></th>
+                    <th class="p-3 px-5"><%= sortable "RW", 6 %></th>
+                    <th class="p-3 px-5"><%= sortable "ROW", 7 %></th>
+                    <th class="p-3 px-5"><%= sortable "HOME", 15 %></th>
+                    <th class="p-3 px-5"><%= sortable "VISITOR", 17 %></th>
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +24,10 @@
                         <td class="p-3 px-5 text-center"><%= standing["regulation_losses"] %></td>
                         <td class="p-3 px-5 text-center"><%= standing["overtime_losses"] %></td>
                         <td class="p-3 px-5 text-center"><%= standing["points"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["regulation_wins"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["regulation_overtime_wins"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["home_record"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["visitor_record"] %></td>
                     </tr>
                 <% end %>
             </tbody>
