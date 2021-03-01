@@ -45,7 +45,8 @@ class DashboardController < ApplicationController
         (vts.shootout_wins + hts.shootout_wins) shootout_wins,
         (vts.regulation_losses + hts.regulation_losses) regulation_losses,
         (vts.overtime_losses + hts.overtime_losses) overtime_losses,
-        (vts.shootout_losses + hts.shootout_losses) shootout_losses
+        (vts.shootout_losses + hts.shootout_losses) shootout_losses,
+        (vts.total_wins + hts.total_wins) * 2 + (vts.overtime_losses + hts.overtime_losses) points
       FROM VISITOR_TEAM_STATS vts
       INNER JOIN HOME_TEAM_STATS hts ON vts.abrv = hts.abrv
       ORDER BY #{sort_column} #{sort_direction};

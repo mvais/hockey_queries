@@ -22,3 +22,16 @@
     border-bottom-color: #F2F5FA;
     border-right-color: #F2F5FA;
 }
+
+.table-bg-color {
+    background: #EAEDF0;
+}
+
+table>tbody>tr>th:first-child,
+table>tbody>tr>td:first-child {
+  padding: 5px 10px;
+}
+
+td:first-child {
+  width: 20%;
+}

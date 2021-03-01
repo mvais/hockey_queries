@@ -1,24 +1,25 @@
-<div class="container max-w-7xl	mt-5 m-auto">
-    <h1 class="font-bold text-4xl">Standings</h1>
+<div class="container max-w-5xl	mt-5 m-auto">
     <div class="py-4 flex">
-        <table class="w-full text-md bg-white mb-4">
+        <table class="w-full text-md bg-white mb-4" cellspacing="0" cellpadding="0">
             <thead>
-                <tr class="bg-doge-grey shadow-none">
+                <tr class="table-bg-color shadow-none">
                     <th class="text-left p-3 px-5"><%= sortable "Team", 1 %></th>
-                    <th class="text-left p-3 px-5"><%= sortable "GP", 3 %></th>
-                    <th class="text-left p-3 px-5"><%= sortable "Wins", 4 %></th>
-                    <th class="text-left p-3 px-5"><%= sortable "Losses", 9 %></th>
-                    <th class="text-left p-3 px-5"><%= sortable "OTL", 10 %></th>
+                    <th class="p-3 px-5"><%= sortable "GP", 3 %></th>
+                    <th class="p-3 px-5"><%= sortable "W", 4 %></th>
+                    <th class="p-3 px-5"><%= sortable "L", 9 %></th>
+                    <th class="p-3 px-5"><%= sortable "OTL", 10 %></th>
+                    <th class="p-3 px-5"><%= sortable "P", 12 %></th>
                 </tr>
             </thead>
             <tbody>
                 <% @standings.each do |standing| %>
-                    <tr class="border-b-2 border-bg-dodge-grey">
-                        <td class="p-3 px-5 font-semibold border-r-2 border-bg-dodge-grey"><%= standing["team_name"] %></td>
-                        <td class="p-3 px-5"><%= standing["games_played"] %></td>
-                        <td class="p-3 px-5"><%= standing["total_wins"] %></td>
-                        <td class="p-3 px-5"><%= standing["regulation_losses"] %></td>
-                        <td class="p-3 px-5"><%= standing["overtime_losses"] %></td>
+                    <tr class="border-b-4 border-bg-dodge-grey">
+                        <td class="p-3 px-5 font-semibold border-r-4 border-bg-dodge-grey"><%= standing["team_name"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["games_played"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["total_wins"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["regulation_losses"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["overtime_losses"] %></td>
+                        <td class="p-3 px-5 text-center"><%= standing["points"] %></td>
                     </tr>
                 <% end %>
             </tbody>
